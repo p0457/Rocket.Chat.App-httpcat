@@ -1,0 +1,8 @@
+{
+  "Slash_Command_Description": "Returns a cat embodying the HTTP status code.",
+  "Slash_Command_Params_Example": "[HTTP status code]",
+  "Customize_Icon": "Customize Icons",
+  "Customize_Icon_Description": "Change the icon that is used for messages from this integration.",
+  "Customize_Name": "Customize Name",
+  "Customize_Name_Description": "Choose the username that this integration will post as."
+}

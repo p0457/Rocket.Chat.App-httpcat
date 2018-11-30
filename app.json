@@ -1,0 +1,15 @@
+{
+    "id": "1d539b94-a700-492f-adc4-4714f16fb530",
+    "version": "0.0.1",
+    "requiredApiVersion": "^0.9.13",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "Thomas Gardner",
+        "homepage": "https://github.com/tgardner851",
+        "support": "https://github.com/tgardner851/Rocket.Chat.App-httpcat"
+    },
+    "name": "HTTP Cat",
+    "nameSlug": "http-cat",
+    "classFile": "HttpCatApp.ts",
+    "description": "Returns a cat embodying the provided HTTP status code."
+}
