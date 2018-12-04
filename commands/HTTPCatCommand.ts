@@ -47,7 +47,7 @@ export class HTTPCatCommand implements ISlashCommand {
 
         const builder = modify.getCreator().startMessage()
             .setSender(context.getSender()).setRoom(context.getRoom())
-            .setText(result.content).setUsernameAlias(username).setAvatarUrl(icon);
+            .setText(result).setUsernameAlias(username).setAvatarUrl(icon);
 
         if (successful === true) {
           // Respond in room
