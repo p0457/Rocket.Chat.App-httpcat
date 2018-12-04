@@ -7,13 +7,13 @@ export class HTTPCatCommand implements ISlashCommand {
     public i18nDescription: string = 'Slash_Command_Description';
     public providesPreview: boolean = false;
 
-    constructor() { }
-
     public async executor(context: SlashCommandContext, read: IRead, modify: IModify, http: IHttp): Promise<void> {
-        const icon = await read.getEnvironmentReader().getSettings().getValueById('abstract_icon');
-        const username = await read.getEnvironmentReader().getSettings().getValueById('abstract_name');
+        const icon = await read.getEnvironmentReader().getSettings().getValueById('httpcat_icon');
+        const username = await read.getEnvironmentReader().getSettings().getValueById('httpcat_name');
 
-        const codes = [100, 101, 200, 201, 202, 204, 206, 207, 300, 301, 303, 304, 305, 307, 400, 401, 402, 403, 404, 405, 406, 408, 409, 410, 411, 413, 414, 416, 417, 418, 422, 423, 424, 425, 426, 429, 431, 444, 450, 500, 502, 503, 506, 507, 508, 509, 599];
+        const codes = [100, 101, 200, 201, 202, 204, 206, 207, 300, 301, 303, 304, 305, 307, 400, 401, 402, 403, 404,
+          405, 406, 408, 409, 410, 411, 413, 414, 416, 417, 418, 422, 423, 424, 425, 426, 429, 431, 444, 450, 500,
+          502, 503, 506, 507, 508, 509, 599];
         const httpCatUrl = 'http://httpcats.herokuapp.com/';
 
         let result;
@@ -21,7 +21,7 @@ export class HTTPCatCommand implements ISlashCommand {
 
         if (context.getArguments().length === 1) {
           // Has a code
-          let code = parseInt(context.getArguments()[0]);
+          const code = parseInt(context.getArguments()[0], undefined);
           if (isNaN(code)) {
             // Code invalid as number
             result = 'Code was not a number!';
@@ -33,7 +33,7 @@ export class HTTPCatCommand implements ISlashCommand {
             } else {
               // Code was valid for list
               successful = true;
-              let url = httpCatUrl + code + '.jpg';
+              const url = httpCatUrl + code + '.jpg';
               result = url;
             }
           }
